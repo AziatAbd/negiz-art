@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "FuturaPT", Arial, sans-serif;
+}
+
+.img-container {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.info-container {
+  color: #fff;
+  padding: 30px;
+}
+
+.company-name {
+  margin: 0 0 20px 0;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 95%;
+}
+
+.text {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+.box {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: 0 0 20px 0;
+}
+
+.mn-info {
+  background-color: #fff;
+  color: #222;
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.price {
+  color: #ddb094;
+}
+
+.submit {
+  background-color: #ddb094;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+}
