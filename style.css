@@ -7,6 +7,8 @@
 body {
   height: 100vh;
   font-family: "FuturaPT", Arial, sans-serif;
+  margin: 0;
+  overflow: hidden; /* Отключаем скроллинг */
 }
 
 .img-container {
@@ -14,16 +16,21 @@ body {
   top: 0;
   z-index: -1;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Масштабируем изображение, сохраняя пропорции */
 }
 
 .info-container {
   color: #fff;
   padding: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .company-name {
@@ -65,8 +72,103 @@ body {
   background-color: #ddb094;
   padding: 10px;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
   color: #fff;
   text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit:hover {
+  background-color: #c4896d;
+}
+
+/* Стили для десктопной версии */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Фон для десктопа */
+    overflow: auto; /* Включаем скроллинг */
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .img-container {
+    position: relative;
+    z-index: 100;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .info-container {
+    width: 50%;
+    padding: 40px;
+    text-align: left; /* Выравниваем текст по левому краю */
+  }
+
+  .company-name {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+  }
+
+  .title {
+    font-size: 32px;
+    margin: 0 0 40px 0;
+  }
+
+  .text {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+  }
+
+  .box {
+    justify-content: flex-start;
+  }
+
+  .mn-info {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .submit {
+    padding: 15px 30px;
+    font-size: 18px;
+    width: fit-content;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .info-container {
+    padding: 60px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
 }
