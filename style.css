@@ -5,10 +5,11 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+  max-height: 120vh;
   font-family: "FuturaPT", Arial, sans-serif;
   margin: 0;
-  overflow: hidden; /* Отключаем скроллинг */
 }
 
 .img-container {
@@ -23,14 +24,18 @@ body {
 .img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Масштабируем изображение, сохраняя пропорции */
+  object-fit: cover;
 }
 
 .info-container {
   color: #fff;
-  padding: 30px;
+  padding: 30px 30px 0;
   position: relative;
   z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .company-name {
@@ -40,7 +45,7 @@ body {
 .title {
   font-size: 22px;
   font-weight: 600;
-  margin: 0 0 95%;
+  margin: 0 0 85%;
 }
 
 .text {
@@ -50,9 +55,9 @@ body {
 
 .box {
   display: flex;
-  gap: 40px;
   justify-content: center;
   margin: 0 0 20px 0;
+  gap: 10px;
 }
 
 .mn-info {
@@ -62,6 +67,11 @@ body {
   gap: 5px;
   padding: 10px;
   border-radius: 15px;
+  width: 170px;
+
+  img {
+    width: 50px;
+  }
 }
 
 .price {
@@ -74,23 +84,22 @@ body {
   border-radius: 20px;
   color: #fff;
   text-decoration: none;
-  transition: background-color 0.3s ease;
   cursor: pointer;
-  width: 100%;
+  font-size: 18px;
+  text-align: center;
 }
 
 .submit:hover {
   background-color: #c4896d;
 }
 
-/* Стили для десктопной версии */
 @media (min-width: 768px) {
   body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Фон для десктопа */
-    overflow: auto; /* Включаем скроллинг */
+    background-color: #f0f0f0;
+    overflow: auto;
   }
 
   .container {
@@ -116,7 +125,7 @@ body {
   .info-container {
     width: 50%;
     padding: 40px;
-    text-align: left; /* Выравниваем текст по левому краю */
+    text-align: left;
   }
 
   .company-name {
