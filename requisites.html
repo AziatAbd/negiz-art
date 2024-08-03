@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Банктік есептер</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      .card-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+      .card {
+        background-color: #e0e0e0;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        min-width: 200px;
+      }
+      .card img {
+        max-width: 50px;
+        margin-right: 15px;
+      }
+      .card .card-info {
+        flex-grow: 1;
+      }
+      .card .card-info p {
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+      .card .card-info span {
+        display: block;
+        font-size: 1em;
+        margin-top: 10px;
+      }
+      .card .copy-icon {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Реквизиттер</h1>
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="https://i.banks.kg/308/optimabank.png"
+            alt="OptimaBank Logo"
+          />
+          <div class="card-info">
+            <p>OptimaBank</p>
+            <span id="optima-card-number">416958535597583</span>
+          </div>
+          <img
+            src="https://static-00.iconduck.com/assets.00/copy-icon-2021x2048-5n8s57wy.png"
+            width="35"
+            alt="Copy Icon"
+            class="copy-icon"
+            onclick="copyToClipboard('optima-card-number')"
+          />
+        </div>
+        <div class="card">
+          <img src="https://mbank.kg/media/logo/Frame_4.png" alt="Mbank Logo" />
+          <div class="card-info">
+            <p>Mbank</p>
+            <span id="mbank-card-number">996507459540</span>
+          </div>
+          <img
+            src="https://static-00.iconduck.com/assets.00/copy-icon-2021x2048-5n8s57wy.png"
+            width="35"
+            alt="Copy Icon"
+            class="copy-icon"
+            onclick="copyToClipboard('mbank-card-number')"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function copyToClipboard(elementId) {
+        const text = document.getElementById(elementId).innerText;
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Номер карты скопирован: " + text);
+      }
+    </script>
+  </body>
+</html>
