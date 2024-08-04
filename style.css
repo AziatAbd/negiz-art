@@ -414,8 +414,11 @@ footer ul li a {
   }
 }
 
-/* ===================================== Large Screens (min-width: 1200px) ========================================== */
 @media (min-width: 1200px) {
+  .main-container {
+    margin: 0 0 40px 0;
+  }
+
   .main-container .info-container {
     padding: 80px;
   }
@@ -447,6 +450,14 @@ footer ul li a {
     gap: 20px;
   }
 
+  .youtube-video {
+  }
+
+  .necessary .submit {
+    width: 100%;
+    height: auto;
+  }
+
   .necessary_title,
   #supports h1 {
     font-size: 36px;
@@ -457,7 +468,7 @@ footer ul li a {
   }
 
   .contruction_info-card {
-    width: 90%;
+    width: 50%;
     margin: 10px auto;
   }
 
@@ -470,8 +481,8 @@ footer ul li a {
   .contruction_info-card .block p {
     font-size: 18px;
   }
-}
 
-hr {
-  border-color: #f00;
+  .slider-container {
+    width: 900px;
+  }
 }
