@@ -450,7 +450,19 @@ footer ul li a {
     gap: 20px;
   }
 
+  .necessary_card {
+    font-size: 30px;
+    width: 400px;
+    height: auto;
+  }
+
   .youtube-video {
+    width: fit-content;
+  }
+
+  .youtube-video iframe {
+    width: 800px;
+    height: 500px;
   }
 
   .necessary .submit {
@@ -482,7 +494,19 @@ footer ul li a {
     font-size: 18px;
   }
 
+  .slider {
+    height: 600px;
+  }
+
+  .slider img {
+    object-fit: cover;
+  }
+
   .slider-container {
     width: 900px;
+  }
+
+  .submit {
+    font-size: 30px;
   }
 }
